@@ -1,2 +1,3 @@
+build/
 *.py[cod]
 .DS_Store
