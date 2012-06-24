@@ -69,11 +69,12 @@ class PaginatedList:
     def __appendData( self, headers, data ):
         self.__nextUrl = None #TODO
 
-        newElements = [
-            self.__contentClass( self.__requester, element, completed = False )
-            for element in data['values']
-        ]
-        self.__elements += newElements
+        if data and data.has_key("values"):
+            newElements = [
+                self.__contentClass( self.__requester, element, completed = False )
+                for element in data['values']
+            ]
+            self.__elements += newElements
 
-        return newElements
+            return newElements
 

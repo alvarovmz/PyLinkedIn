@@ -10,6 +10,21 @@ Class `LinkedIn`
 * `get_gists()`: list of `Gist`
 * `rate_limiting`: tuple of two integers: remaining and limit, as explained in [Rate Limiting](http://developer.linkedin.com/v3/#rate-limiting)
 
+Class `Certification`
+=====================
+
+Attributes
+----------
+* `id`: integer
+* `name`: string
+
+Class `Country`
+===============
+
+Attributes
+----------
+* `code`: string
+
 Class `Language`
 ================
 
@@ -32,10 +47,18 @@ Attributes
 ----------
 * `firstName`: string
 * `headline`: string
+* `id`: string
 * `industry`: string
 * `lastName`: string
+* `location`: `Location`
 * `maidenName`: string
+* `pictureUrl`: string
 
+Certifications
+--------------
+* `get_certifications(
+
+)`: list of `Certification`
 Connections
 -----------
 * `get_connections(
@@ -51,6 +74,14 @@ Skills
 * `get_skills(
 
 )`: list of `Skill`
+Class `Location`
+================
+
+Attributes
+----------
+* `country`: `Country`
+* `name`: string
+
 Class `Skill`
 =============
 

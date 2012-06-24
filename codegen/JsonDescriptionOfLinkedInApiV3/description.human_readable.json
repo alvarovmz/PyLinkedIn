@@ -6,11 +6,14 @@
                 { "type": "constant", "value": "https://api.linkedin.com/v1/personal/~" }
             ],
             "attributes": [
+                { "name": "id", "type": "string" },
                 { "name": "firstName", "type": "string" },
                 { "name": "lastName", "type": "string" },
                 { "name": "maidenName", "type": "string" },
                 { "name": "headline", "type": "string" },
-                { "name": "industry", "type": "string" }
+                { "name": "industry", "type": "string" },
+                { "name": "location", "type": "Location" },
+                { "name": "pictureUrl", "type": "string" }
             ],
             "collections": [
                 {    
@@ -37,6 +40,15 @@
                     "type": "LinkedInUser",
                     "url": [
                         { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/connections" }
+                    ],   
+                    "getList": true 
+                },
+                {    
+                    "name": "certifications",
+                    "singularName": "certification",
+                    "type": "Certification",
+                    "url": [
+                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/certifications" }
                     ],   
                     "getList": true 
                 }
@@ -66,6 +78,26 @@
             "name": "LanguageDescription",
             "attributes": [
                 { "name": "name", "type": "string" }
+            ]
+        },
+        {
+            "name": "Certification",
+            "attributes": [
+                { "name": "id", "type": "integer" },
+                { "name": "name", "type": "string" }
+            ]
+        },
+        {
+            "name": "Location",
+            "attributes": [
+                { "name": "name", "type": "string" },
+                { "name": "country", "type": "Country" }
+            ]
+        },
+        {
+            "name": "Country",
+            "attributes": [
+                { "name": "code", "type": "string" }
             ]
         }
     ]

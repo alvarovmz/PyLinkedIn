@@ -12,6 +12,44 @@
                 }, 
                 {
                     "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "name"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "Certification", 
+            "methods": []
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "code"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "Country", 
+            "methods": []
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "integer"
+                    }, 
+                    "name": "id"
+                }, 
+                {
+                    "type": {
                         "simple": false, 
                         "cardinality": "scalar", 
                         "name": "LanguageDescription"
@@ -62,6 +100,14 @@
                         "cardinality": "scalar", 
                         "name": "string"
                     }, 
+                    "name": "id"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
                     "name": "industry"
                 }, 
                 {
@@ -74,11 +120,27 @@
                 }, 
                 {
                     "type": {
+                        "simple": false, 
+                        "cardinality": "scalar", 
+                        "name": "Location"
+                    }, 
+                    "name": "location"
+                }, 
+                {
+                    "type": {
                         "simple": true, 
                         "cardinality": "scalar", 
                         "name": "string"
                     }, 
                     "name": "maidenName"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "pictureUrl"
                 }
             ], 
             "isCompletable": false, 
@@ -158,8 +220,56 @@
                         "cardinality": "list", 
                         "name": "LinkedInUser"
                     }
+                }, 
+                {
+                    "group": "certifications", 
+                    "name": [
+                        "get", 
+                        "certifications"
+                    ], 
+                    "mandatoryParameters": [], 
+                    "request": {
+                        "url": [
+                            {
+                                "type": "constant", 
+                                "value": "http://api.linkedin.com/v1/people/~/certifications"
+                            }
+                        ], 
+                        "information": "data", 
+                        "verb": "GET"
+                    }, 
+                    "isMutation": false, 
+                    "optionalParameters": [], 
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "list", 
+                        "name": "Certification"
+                    }
                 }
             ]
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "scalar", 
+                        "name": "Country"
+                    }, 
+                    "name": "country"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "name"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "Location", 
+            "methods": []
         }, 
         {
             "attributes": [

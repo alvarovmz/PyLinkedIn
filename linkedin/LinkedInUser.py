@@ -19,7 +19,9 @@ import PaginatedList
 
 import Skill
 import LinkedInUser
+import Location
 import Language
+import Certification
 
 class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     @property
@@ -31,6 +33,10 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
         return self._NoneIfNotSet( self._headline )
 
     @property
+    def id( self ):
+        return self._NoneIfNotSet( self._id )
+
+    @property
     def industry( self ):
         return self._NoneIfNotSet( self._industry )
 
@@ -39,8 +45,30 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
         return self._NoneIfNotSet( self._lastName )
 
     @property
+    def location( self ):
+        return self._NoneIfNotSet( self._location )
+
+    @property
     def maidenName( self ):
         return self._NoneIfNotSet( self._maidenName )
+
+    @property
+    def pictureUrl( self ):
+        return self._NoneIfNotSet( self._pictureUrl )
+
+    def get_certifications( self):
+        headers, data = self._requester.requestAndCheck(
+            "GET",
+            "http://api.linkedin.com/v1/people/~/certifications" ,
+            None,
+            None
+        )
+        return PaginatedList.PaginatedList(
+            Certification.Certification,
+            self._requester,
+            headers,
+            data
+        )
 
     def get_connections( self):
         headers, data = self._requester.requestAndCheck(
@@ -87,9 +115,12 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     def _initAttributes( self ):
         self._firstName = LinkedInObject.NotSet
         self._headline = LinkedInObject.NotSet
+        self._id = LinkedInObject.NotSet
         self._industry = LinkedInObject.NotSet
         self._lastName = LinkedInObject.NotSet
+        self._location = LinkedInObject.NotSet
         self._maidenName = LinkedInObject.NotSet
+        self._pictureUrl = LinkedInObject.NotSet
 
     def _useAttributes( self, attributes ):
         if "firstName" in attributes: # pragma no branch
@@ -100,6 +131,10 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
             assert attributes[ "headline" ] is None or isinstance( attributes[ "headline" ], ( str, unicode ) )\
 , attributes[ "headline" ]
             self._headline = attributes[ "headline" ]
+        if "id" in attributes: # pragma no branch
+            assert attributes[ "id" ] is None or isinstance( attributes[ "id" ], ( str, unicode ) )\
+, attributes[ "id" ]
+            self._id = attributes[ "id" ]
         if "industry" in attributes: # pragma no branch
             assert attributes[ "industry" ] is None or isinstance( attributes[ "industry" ], ( str, unicode ) )\
 , attributes[ "industry" ]
@@ -108,7 +143,15 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
             assert attributes[ "lastName" ] is None or isinstance( attributes[ "lastName" ], ( str, unicode ) )\
 , attributes[ "lastName" ]
             self._lastName = attributes[ "lastName" ]
+        if "location" in attributes: # pragma no branch
+            assert attributes[ "location" ] is None or isinstance( attributes[ "location" ], dict )\
+, attributes[ "location" ]
+            self._location = None if attributes[ "location" ] is None else Location.Location( self._requester, attributes[ "location" ], completed = False )
         if "maidenName" in attributes: # pragma no branch
             assert attributes[ "maidenName" ] is None or isinstance( attributes[ "maidenName" ], ( str, unicode ) )\
 , attributes[ "maidenName" ]
             self._maidenName = attributes[ "maidenName" ]
+        if "pictureUrl" in attributes: # pragma no branch
+            assert attributes[ "pictureUrl" ] is None or isinstance( attributes[ "pictureUrl" ], ( str, unicode ) )\
+, attributes[ "pictureUrl" ]
+            self._pictureUrl = attributes[ "pictureUrl" ]
