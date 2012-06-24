@@ -1,0 +1,19 @@
+{
+    "classes": [
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "firstName"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "LinkedInUser", 
+            "methods": []
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "classes": [
+        {
+            "name": "LinkedInUser",
+            "url": [
+                { "type": "constant", "value": "https://api.linkedin.com/personal/~" }
+            ],
+            "attributes": [
+                { "name": "firstName", "type": "string" }
+            ]
+        }
+    ]
+}
