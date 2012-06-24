@@ -15,36 +15,17 @@
 # You should have received a copy of the GNU Lesser General Public License along with PyLinkedIn.  If not, see <http://www.gnu.org/licenses/>.
 
 import LinkedInObject
-import PaginatedList
 
-import Skill
-
-class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
+class SkillDescription( LinkedInObject.BasicLinkedInObject ):
     @property
-    def firstName( self ):
-        return self._NoneIfNotSet( self._firstName )
-
-    def get_skills( self
- ):
-        headers, data = self._requester.requestAndCheck(
-            "GET",
-            "http://api.linkedin.com/v1/people/~/skills"
-,
-            None,
-            None
-        )
-        return PaginatedList.PaginatedList(
-            Skill.Skill,
-            self._requester,
-            headers,
-            data
-        )
+    def name( self ):
+        return self._NoneIfNotSet( self._name )
 
     def _initAttributes( self ):
-        self._firstName = LinkedInObject.NotSet
+        self._name = LinkedInObject.NotSet
 
     def _useAttributes( self, attributes ):
-        if "firstName" in attributes: # pragma no branch
-            assert attributes[ "firstName" ] is None or isinstance( attributes[ "firstName" ], ( str, unicode ) )\
-, attributes[ "firstName" ]
-            self._firstName = attributes[ "firstName" ]
+        if "name" in attributes: # pragma no branch
+            assert attributes[ "name" ] is None or isinstance( attributes[ "name" ], ( str, unicode ) )\
+, attributes[ "name" ]
+            self._name = attributes[ "name" ]

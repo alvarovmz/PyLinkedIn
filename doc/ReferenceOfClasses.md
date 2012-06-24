@@ -16,3 +16,23 @@ Class `LinkedInUser`
 Attributes
 ----------
 * `firstName`: string
+
+Skills
+------
+* `get_skills(
+
+)`: list of `Skill`
+Class `Skill`
+=============
+
+Attributes
+----------
+* `id`: integer
+* `skill`: `SkillDescription`
+
+Class `SkillDescription`
+========================
+
+Attributes
+----------
+* `name`: string

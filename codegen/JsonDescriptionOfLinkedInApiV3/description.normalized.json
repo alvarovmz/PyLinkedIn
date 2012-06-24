@@ -13,6 +13,70 @@
             ], 
             "isCompletable": false, 
             "name": "LinkedInUser", 
+            "methods": [
+                {
+                    "group": "skills", 
+                    "name": [
+                        "get", 
+                        "skills"
+                    ], 
+                    "mandatoryParameters": [], 
+                    "request": {
+                        "url": [
+                            {
+                                "type": "constant", 
+                                "value": "http://api.linkedin.com/v1/people/~/skills"
+                            }
+                        ], 
+                        "information": "data", 
+                        "verb": "GET"
+                    }, 
+                    "isMutation": false, 
+                    "optionalParameters": [], 
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "list", 
+                        "name": "Skill"
+                    }
+                }
+            ]
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "integer"
+                    }, 
+                    "name": "id"
+                }, 
+                {
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "scalar", 
+                        "name": "SkillDescription"
+                    }, 
+                    "name": "skill"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "Skill", 
+            "methods": []
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "name"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "SkillDescription", 
             "methods": []
         }
     ]

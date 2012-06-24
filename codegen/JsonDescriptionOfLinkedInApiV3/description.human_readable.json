@@ -3,10 +3,34 @@
         {
             "name": "LinkedInUser",
             "url": [
-                { "type": "constant", "value": "https://api.linkedin.com/personal/~" }
+                { "type": "constant", "value": "https://api.linkedin.com/v1/personal/~" }
             ],
             "attributes": [
                 { "name": "firstName", "type": "string" }
+            ],
+            "collections": [
+                {    
+                    "name": "skills",
+                    "singularName": "skill",
+                    "type": "Skill",
+                    "url": [
+                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/skills" }
+                    ],   
+                    "getList": true 
+                }
+            ]
+        },
+        {
+            "name": "Skill",
+            "attributes": [
+                { "name": "id", "type": "integer" },
+                { "name": "skill", "type": "SkillDescription" }
+            ]
+        },
+        {
+            "name": "SkillDescription",
+            "attributes": [
+                { "name": "name", "type": "string" }
             ]
         }
     ]

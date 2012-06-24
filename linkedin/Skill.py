@@ -15,36 +15,28 @@
 # You should have received a copy of the GNU Lesser General Public License along with PyLinkedIn.  If not, see <http://www.gnu.org/licenses/>.
 
 import LinkedInObject
-import PaginatedList
 
-import Skill
+import SkillDescription
 
-class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
+class Skill( LinkedInObject.BasicLinkedInObject ):
     @property
-    def firstName( self ):
-        return self._NoneIfNotSet( self._firstName )
+    def id( self ):
+        return self._NoneIfNotSet( self._id )
 
-    def get_skills( self
- ):
-        headers, data = self._requester.requestAndCheck(
-            "GET",
-            "http://api.linkedin.com/v1/people/~/skills"
-,
-            None,
-            None
-        )
-        return PaginatedList.PaginatedList(
-            Skill.Skill,
-            self._requester,
-            headers,
-            data
-        )
+    @property
+    def skill( self ):
+        return self._NoneIfNotSet( self._skill )
 
     def _initAttributes( self ):
-        self._firstName = LinkedInObject.NotSet
+        self._id = LinkedInObject.NotSet
+        self._skill = LinkedInObject.NotSet
 
     def _useAttributes( self, attributes ):
-        if "firstName" in attributes: # pragma no branch
-            assert attributes[ "firstName" ] is None or isinstance( attributes[ "firstName" ], ( str, unicode ) )\
-, attributes[ "firstName" ]
-            self._firstName = attributes[ "firstName" ]
+        if "id" in attributes: # pragma no branch
+            assert attributes[ "id" ] is None or isinstance( attributes[ "id" ], int )\
+, attributes[ "id" ]
+            self._id = attributes[ "id" ]
+        if "skill" in attributes: # pragma no branch
+            assert attributes[ "skill" ] is None or isinstance( attributes[ "skill" ], dict )\
+, attributes[ "skill" ]
+            self._skill = None if attributes[ "skill" ] is None else SkillDescription.SkillDescription( self._requester, attributes[ "skill" ], completed = False )
