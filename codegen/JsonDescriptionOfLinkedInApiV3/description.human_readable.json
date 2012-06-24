@@ -6,7 +6,11 @@
                 { "type": "constant", "value": "https://api.linkedin.com/v1/personal/~" }
             ],
             "attributes": [
-                { "name": "firstName", "type": "string" }
+                { "name": "firstName", "type": "string" },
+                { "name": "lastName", "type": "string" },
+                { "name": "maidenName", "type": "string" },
+                { "name": "headline", "type": "string" },
+                { "name": "industry", "type": "string" }
             ],
             "collections": [
                 {    
@@ -24,6 +28,15 @@
                     "type": "Language",
                     "url": [
                         { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/languages" }
+                    ],   
+                    "getList": true 
+                },
+                {    
+                    "name": "connections",
+                    "singularName": "connection",
+                    "type": "LinkedInUser",
+                    "url": [
+                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/connections" }
                     ],   
                     "getList": true 
                 }

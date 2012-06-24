@@ -47,6 +47,38 @@
                         "name": "string"
                     }, 
                     "name": "firstName"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "headline"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "industry"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "lastName"
+                }, 
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "maidenName"
                 }
             ], 
             "isCompletable": false, 
@@ -100,6 +132,31 @@
                         "simple": false, 
                         "cardinality": "list", 
                         "name": "Language"
+                    }
+                }, 
+                {
+                    "group": "connections", 
+                    "name": [
+                        "get", 
+                        "connections"
+                    ], 
+                    "mandatoryParameters": [], 
+                    "request": {
+                        "url": [
+                            {
+                                "type": "constant", 
+                                "value": "http://api.linkedin.com/v1/people/~/connections"
+                            }
+                        ], 
+                        "information": "data", 
+                        "verb": "GET"
+                    }, 
+                    "isMutation": false, 
+                    "optionalParameters": [], 
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "list", 
+                        "name": "LinkedInUser"
                     }
                 }
             ]

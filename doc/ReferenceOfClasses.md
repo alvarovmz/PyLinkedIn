@@ -31,7 +31,16 @@ Class `LinkedInUser`
 Attributes
 ----------
 * `firstName`: string
+* `headline`: string
+* `industry`: string
+* `lastName`: string
+* `maidenName`: string
 
+Connections
+-----------
+* `get_connections(
+
+)`: list of `LinkedInUser`
 Languages
 ---------
 * `get_languages(
