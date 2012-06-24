@@ -6,6 +6,44 @@
                     "type": {
                         "simple": true, 
                         "cardinality": "scalar", 
+                        "name": "integer"
+                    }, 
+                    "name": "id"
+                }, 
+                {
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "scalar", 
+                        "name": "LanguageDescription"
+                    }, 
+                    "name": "language"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "Language", 
+            "methods": []
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
+                        "name": "string"
+                    }, 
+                    "name": "name"
+                }
+            ], 
+            "isCompletable": false, 
+            "name": "LanguageDescription", 
+            "methods": []
+        }, 
+        {
+            "attributes": [
+                {
+                    "type": {
+                        "simple": true, 
+                        "cardinality": "scalar", 
                         "name": "string"
                     }, 
                     "name": "firstName"
@@ -37,6 +75,31 @@
                         "simple": false, 
                         "cardinality": "list", 
                         "name": "Skill"
+                    }
+                }, 
+                {
+                    "group": "languages", 
+                    "name": [
+                        "get", 
+                        "languages"
+                    ], 
+                    "mandatoryParameters": [], 
+                    "request": {
+                        "url": [
+                            {
+                                "type": "constant", 
+                                "value": "http://api.linkedin.com/v1/people/~/languages"
+                            }
+                        ], 
+                        "information": "data", 
+                        "verb": "GET"
+                    }, 
+                    "isMutation": false, 
+                    "optionalParameters": [], 
+                    "type": {
+                        "simple": false, 
+                        "cardinality": "list", 
+                        "name": "Language"
                     }
                 }
             ]

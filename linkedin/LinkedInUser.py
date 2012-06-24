@@ -18,18 +18,31 @@ import LinkedInObject
 import PaginatedList
 
 import Skill
+import Language
 
 class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     @property
     def firstName( self ):
         return self._NoneIfNotSet( self._firstName )
 
-    def get_skills( self
- ):
+    def get_languages( self):
         headers, data = self._requester.requestAndCheck(
             "GET",
-            "http://api.linkedin.com/v1/people/~/skills"
-,
+            "http://api.linkedin.com/v1/people/~/languages" ,
+            None,
+            None
+        )
+        return PaginatedList.PaginatedList(
+            Language.Language,
+            self._requester,
+            headers,
+            data
+        )
+
+    def get_skills( self):
+        headers, data = self._requester.requestAndCheck(
+            "GET",
+            "http://api.linkedin.com/v1/people/~/skills" ,
             None,
             None
         )

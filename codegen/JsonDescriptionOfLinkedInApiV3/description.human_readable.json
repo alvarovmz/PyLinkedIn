@@ -17,6 +17,15 @@
                         { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/skills" }
                     ],   
                     "getList": true 
+                },
+                {    
+                    "name": "languages",
+                    "singularName": "language",
+                    "type": "Language",
+                    "url": [
+                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/languages" }
+                    ],   
+                    "getList": true 
                 }
             ]
         },
@@ -29,6 +38,19 @@
         },
         {
             "name": "SkillDescription",
+            "attributes": [
+                { "name": "name", "type": "string" }
+            ]
+        },
+        {
+            "name": "Language",
+            "attributes": [
+                { "name": "id", "type": "integer" },
+                { "name": "language", "type": "LanguageDescription" }
+            ]
+        },
+        {
+            "name": "LanguageDescription",
             "attributes": [
                 { "name": "name", "type": "string" }
             ]

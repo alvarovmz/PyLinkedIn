@@ -10,6 +10,21 @@ Class `LinkedIn`
 * `get_gists()`: list of `Gist`
 * `rate_limiting`: tuple of two integers: remaining and limit, as explained in [Rate Limiting](http://developer.linkedin.com/v3/#rate-limiting)
 
+Class `Language`
+================
+
+Attributes
+----------
+* `id`: integer
+* `language`: `LanguageDescription`
+
+Class `LanguageDescription`
+===========================
+
+Attributes
+----------
+* `name`: string
+
 Class `LinkedInUser`
 ====================
 
@@ -17,6 +32,11 @@ Attributes
 ----------
 * `firstName`: string
 
+Languages
+---------
+* `get_languages(
+
+)`: list of `Language`
 Skills
 ------
 * `get_skills(
