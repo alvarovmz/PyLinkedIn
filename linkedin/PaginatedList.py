@@ -19,6 +19,7 @@ class PaginatedList:
         self.__contentClass = contentClass
         self.__elements = []
         self.__appendData( headers, data )
+        self.__nextUrl = None
 
     def __iter__( self ):
         for element in self.__elements:
@@ -67,14 +68,19 @@ class PaginatedList:
         return self.__appendData( headers, data )
 
     def __appendData( self, headers, data ):
-        self.__nextUrl = None #TODO
+        newElements = []
 
-        if data and data.has_key("values"):
-            newElements = [
-                self.__contentClass( self.__requester, element, completed = False )
-                for element in data['values']
-            ]
-            self.__elements += newElements
+        if data:
+            if data.has_key("values"):
+                newElements = [
+                    self.__contentClass( self.__requester, element, completed = False )
+                    for element in data['values']
+                ]
+                self.__elements += newElements
 
-            return newElements
+            if int(data["_total"]) > len(self.__elements):
+                self.__nextUrl = '%s?start=%s&count=%s' % (self.__requester.url,
+                    str(len(self.__elements)), str(2))
+
+        return newElements
 

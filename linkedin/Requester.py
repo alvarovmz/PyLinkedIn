@@ -78,7 +78,8 @@ class Requester:
 
         headers = dict()
 
-        resp, content = self.client.request(self.__completeUrl( url, parameters ), verb, body=json.dumps(parameters), headers=self.headers)
+        self.url =  self.__completeUrl( url, parameters )
+        resp, content = self.client.request(self.url, verb, body=json.dumps(parameters), headers=self.headers)
 
         status = resp.status
         headers = resp
