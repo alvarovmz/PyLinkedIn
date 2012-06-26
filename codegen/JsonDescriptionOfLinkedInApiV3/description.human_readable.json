@@ -21,7 +21,7 @@
                     "singularName": "skill",
                     "type": "Skill",
                     "url": [
-                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/skills" }
+                        { "type": "constant", "value": "https://api.linkedin.com/v1/people/~/skills" }
                     ],   
                     "getList": true 
                 },
@@ -30,7 +30,7 @@
                     "singularName": "language",
                     "type": "Language",
                     "url": [
-                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/languages" }
+                        { "type": "constant", "value": "https://api.linkedin.com/v1/people/~/languages" }
                     ],   
                     "getList": true 
                 },
@@ -39,7 +39,7 @@
                     "singularName": "connection",
                     "type": "LinkedInUser",
                     "url": [
-                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/connections" }
+                        { "type": "constant", "value": "https://api.linkedin.com/v1/people/~/connections" }
                     ],   
                     "getList": true 
                 },
@@ -48,7 +48,7 @@
                     "singularName": "certification",
                     "type": "Certification",
                     "url": [
-                        { "type": "constant", "value": "http://api.linkedin.com/v1/people/~/certifications" }
+                        { "type": "constant", "value": "https://api.linkedin.com/v1/people/~/certifications" }
                     ],   
                     "getList": true 
                 }

@@ -59,7 +59,7 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     def get_certifications( self):
         headers, data = self._requester.requestAndCheck(
             "GET",
-            "http://api.linkedin.com/v1/people/~/certifications" ,
+            "https://api.linkedin.com/v1/people/~/certifications" ,
             None,
             None
         )
@@ -73,7 +73,7 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     def get_connections( self):
         headers, data = self._requester.requestAndCheck(
             "GET",
-            "http://api.linkedin.com/v1/people/~/connections" ,
+            "https://api.linkedin.com/v1/people/~/connections" ,
             None,
             None
         )
@@ -87,7 +87,7 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     def get_languages( self):
         headers, data = self._requester.requestAndCheck(
             "GET",
-            "http://api.linkedin.com/v1/people/~/languages" ,
+            "https://api.linkedin.com/v1/people/~/languages" ,
             None,
             None
         )
@@ -101,7 +101,7 @@ class LinkedInUser( LinkedInObject.BasicLinkedInObject ):
     def get_skills( self):
         headers, data = self._requester.requestAndCheck(
             "GET",
-            "http://api.linkedin.com/v1/people/~/skills" ,
+            "https://api.linkedin.com/v1/people/~/skills" ,
             None,
             None
         )

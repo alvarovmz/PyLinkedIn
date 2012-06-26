@@ -23,15 +23,12 @@ class LinkedIn( object ):
 
         self.__requester = Requester( api_key, api_secret, oauth_token, oauth_token_secret)
 
-    @property
-    def rate_limiting( self ):
-        return self.__requester.rate_limiting
 
     def get_user( self, login = None ):
 
         headers, data = self.__requester.requestAndCheck(
             "GET",
-            'http://api.linkedin.com/v1/people/~',
+            'https://api.linkedin.com/v1/people/~',
             ['id','first-name'],
             None
         )

@@ -37,11 +37,6 @@ class Requester:
         self.access_token_url = 'https://api.linkedin.com/uas/oauth/accessToken'
         self.authorize_url = 'https://api.linkedin.com/uas/oauth/authorize'
 
-
-        self.api_base = 'http://api.linkedin.com'
-        self.api_version = 'v1'
-        self.api_url = '%s/%s/' % (self.api_base, self.api_version)
-
         # If there's headers, set them. If not, lets
         self.headers = {}
 
@@ -55,7 +50,6 @@ class Requester:
         client_args = {}
 
         # See if they're authenticating for the first or if they already have some tokens.
-        # http://michaelhelmick.com/tokens.jpg
         if self.api_key is not None and self.api_secret is not None:
             self.consumer = oauth.Consumer(key=self.api_key, secret=self.api_secret)
 

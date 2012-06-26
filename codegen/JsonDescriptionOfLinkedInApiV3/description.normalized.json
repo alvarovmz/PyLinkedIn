@@ -157,7 +157,7 @@
                         "url": [
                             {
                                 "type": "constant", 
-                                "value": "http://api.linkedin.com/v1/people/~/skills"
+                                "value": "https://api.linkedin.com/v1/people/~/skills"
                             }
                         ], 
                         "information": "data", 
@@ -182,7 +182,7 @@
                         "url": [
                             {
                                 "type": "constant", 
-                                "value": "http://api.linkedin.com/v1/people/~/languages"
+                                "value": "https://api.linkedin.com/v1/people/~/languages"
                             }
                         ], 
                         "information": "data", 
@@ -207,7 +207,7 @@
                         "url": [
                             {
                                 "type": "constant", 
-                                "value": "http://api.linkedin.com/v1/people/~/connections"
+                                "value": "https://api.linkedin.com/v1/people/~/connections"
                             }
                         ], 
                         "information": "data", 
@@ -232,7 +232,7 @@
                         "url": [
                             {
                                 "type": "constant", 
-                                "value": "http://api.linkedin.com/v1/people/~/certifications"
+                                "value": "https://api.linkedin.com/v1/people/~/certifications"
                             }
                         ], 
                         "information": "data", 
