@@ -1,3 +1,6 @@
+PyLinkedin
+==========
+
 This is a Python library to access the [LinkedIn API](https://developer.linkedin.com/rest).
 
 With it, you can manage your [LinkedIn](http://linkedin.com) resources (user profiles, companies, etc.) from Python scripts.
@@ -8,7 +11,7 @@ Should you have any question, or if you find a bug, or if there is something you
 Download and install
 ====================
 
-Clone it on [LinkedIn](http://github.com/alvarovmz/PyLinkedIn).
+Clone it on Github: [PyLinkedIn](http://github.com/alvarovmz/PyLinkedIn).
 
 Tutorial
 ========
@@ -19,7 +22,7 @@ First create a Linkedin instance:
 
 Create a LinkedIn instance with:
 
-    g = LinkedIn(api_key, api_secret, oauth_token, oauth_token_secret )
+    l = LinkedIn(api_key, api_secret, oauth_token, oauth_token_secret )
 
 
 Licensing
@@ -32,8 +35,19 @@ See files COPYING and COPYING.LESSER, as requested by [GNU](http://www.gnu.org/l
 History
 =======
 
+Version 0.1 (June 27th, 2012)
+---------------------------
+
+* User details:
+    * Basic attributes
+    * Skills
+    * Languages
+    * Connections
+    * Certifications
+
 
 Mentions
 ========
 Original project from Vincent Jacques - vincent@vincent-jacques.net [PyGithub](https://github.com/jacquev6/PyGithub)
+
 Michael Helmick [Linkedin API client](https://github.com/michaelhelmick/linkedin)
