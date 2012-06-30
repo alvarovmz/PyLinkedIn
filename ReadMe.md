@@ -15,7 +15,7 @@ Clone it on Github: [PyLinkedIn](http://github.com/alvarovmz/PyLinkedIn).
 
     git clone https://github.com/alvarovmz/PyLinkedIn.git
 
-Or install it from the (Python Package Index)[http://pypi.python.org/pypi/PyLinkedIn]
+Or install it from the [Python Package Index](http://pypi.python.org/pypi/PyLinkedIn)
 
     pip install PyLinkedIn
 
