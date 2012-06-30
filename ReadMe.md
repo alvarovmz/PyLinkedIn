@@ -13,6 +13,13 @@ Download and install
 
 Clone it on Github: [PyLinkedIn](http://github.com/alvarovmz/PyLinkedIn).
 
+    git clone https://github.com/alvarovmz/PyLinkedIn.git
+
+Or install it from the (Python Package Index)[http://pypi.python.org/pypi/PyLinkedIn]
+
+    pip install PyLinkedIn
+
+
 Tutorial
 ========
 
@@ -48,6 +55,6 @@ Version 0.1 (June 27th, 2012)
 
 Mentions
 ========
-Original project from Vincent Jacques - vincent@vincent-jacques.net [PyGithub](https://github.com/jacquev6/PyGithub)
+Original project from Vincent Jacques: [PyGithub](https://github.com/jacquev6/PyGithub)
 
-Michael Helmick [Linkedin API client](https://github.com/michaelhelmick/linkedin)
+Michael Helmick: [Linkedin API client](https://github.com/michaelhelmick/linkedin)

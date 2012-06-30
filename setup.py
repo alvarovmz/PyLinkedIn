@@ -35,7 +35,7 @@ setup(
 
         Then play with your LinkedIn objects::
 
-            for repo in g.get_user().get_skills():
+            for i in g.get_user().get_skills():
                 print i.skill.name
 
         Reference documentation
